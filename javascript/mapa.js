@@ -14,6 +14,11 @@ $(function() {
 				icon: "../imagenes/marcadores/arrastrar.png",
 				title: "UPIITA",
 				html: "Aqui se imparte el curso de HTML5"
+			}, {
+				address: "Avenida Montevideo 363, Gustavo A. Madero, Lindavista, 07300 Cuidad de Mexico, D.F., México",
+				icon: "../imagenes/marcadores/apartamento.png",
+				title: "UPIITA",
+				html: "Aqui se imparte el curso de HTML5"
 			}],
 			maptype: "roadmap",
 			zoom: 15
