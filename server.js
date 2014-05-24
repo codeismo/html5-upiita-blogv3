@@ -9,7 +9,15 @@ var http = require("http");
 
 var app = express();/* servidor sencillo */
 var servidor = http.createServer(app); /*servidor http que es mas robusto */
-servidor.listen(8010);
+
+//obtenemos el puerto
+var PUERTO = 8010, HOST="127.0.0.1";
+if(process.env.OPENSHIFT_NODEJS_PORT){
+	PUERTO = process.env.OPENSHIFT_NODEJS_PORT;
+	HOST = process.env.OPENSHIFT_NODEJS_IP;
+}
+
+servidor.listen(PUERTO, HOST);
 
 console.log("servidor levantado...");
 
@@ -39,21 +47,36 @@ app.get("/", function(request, response){
 app.get("/home", function(request, response){
       response.render("index.html");
 });
+app.get("/inicio-contenido", function(request, response){
+      response.render("index_contenido.html");
+});
 /* http://127.0.0.1:8010/ */
 app.get("/galeria", function(request, response){
       response.render("galeria.html");
 });
-
+app.get("/galeria-contenido", function(request, response){
+      response.render("galeria_contenido.html");
+});
 app.get("/contacto", function(request, response){
       response.render("contacto.html");
 });
-
+app.get("/contacto-contenido", function(request, response){
+      response.render("contacto_contenido.html");
+});
 app.get("/chat", function(request, response){
       response.render("chat.html");
 });
 
+app.get("/chat-contenido", function(request, response){
+      response.render("chat_contenido.html");
+});
+
 app.get("/ubicacion", function(request, response){
       response.render("ubicacion.html");
+});
+
+app.get("/ubicacion-contenido", function(request, response){
+      response.render("ubicacion_contenido.html");
 });
 /*Responder a una peticion post*/
 app.post("/suscribir",function(request, response){
@@ -67,8 +90,15 @@ app.post("/suscribir",function(request, response){
 
 app.post("/contactar",function(request, response){
 	var nombre = request.body.nombre;
+	var esAjax = request.body.esAjax;
+	
+	var idVista = "contactar.html";
+	if(esAjax){
+		idVista = "contactar_contenido.html";
+	}
+	
 	var comentario = request.body.comentario;
-	response.render("contactar.html",{
+	response.render(idVista,{
 		nombreCliente: nombre,
 		comentarioCliente: comentario
 	});

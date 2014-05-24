@@ -1,32 +1,5 @@
 {% extends "layout.html" %}
 
-{%block scripts%}
-    {% include "scriptschat.html" %}
-{% endblock %}
-
 {% block contenido %}
-        <section id="chat">
-            <!-- titulos del chat -->
-            <h1>Chat en Vivo</h1>
-            <h4>Mensajes de los usuarios:</h4>
-            <!-- caja de mensajes de los nuevos usuarios -->
-            <div id="mensajes">
-                <!--aqui se agragan las cajas mensaje-->
-            </div>
-            <!-- mensaje del usuario -->
-            <p>
-                <label>Mensaje:</label>
-                <input id="mensaje-usuario" type="text" placeholder="Escriba su mensaje aqui"/>
-            </p>
-            <!-- nombre del usuario -->
-            <p>
-                <label>Usuario:</label>
-                <input id="nombre-usuario" type="text" placeholder="Su nombre aqui"/>
-            </p>
-            <!-- boton de enviar -->
-            <button id="boton">
-                Enviar
-            </button>
-
-        </section>
+      {% include "chat_contenido.html" %}
 {% endblock %}

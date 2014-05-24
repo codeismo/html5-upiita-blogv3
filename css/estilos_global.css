@@ -54,7 +54,6 @@ nav ul li {
 
 nav ul li {
 	font-size: 1.5em;
-	line-height: 4em;
 }
 #titulo h1 {
 	line-height: 3em;
@@ -104,29 +103,52 @@ footer {
 	max-width: 100%;
 	border-radius: 15px;
 }
-#galeria {
+#galeria, #contacto, #suscribir {
 	padding: 2em;
 }
 nav ul li a {
 	color: white;
 	text-decoration: none;
+	padding: 1.5em;
+	line-height: 4em;
 }
-/*estilos suscribir*/
-#suscribir-email:required:invalid {
-	background-image: url("../imagenes/incorrecto.png");
-	background-repeat: no-repeat;
+/* estilos para las formas */
+#suscribir-email {
+	font-size: 0.8em;
+	width: 35%;
+}
+#suscribir-email {
+	transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+}
+
+#suscribir-email:focus {
+	width: 50%;
+}
+input:required:valid {
+	background: url("../imagenes/correcto.png");
+	background-color: white;
 	background-position: right top;
-	background-size: 20px;
-}
-#suscribir-email:required:valid {
-	background-image: url("../imagenes/correcto.png");
+	background-size: 30px;
 	background-repeat: no-repeat;
-	background-position: right top;
-	background-size: 20px;
 }
+input:required:invalid {
+	background: url("../imagenes/incorrecto.png");
+	background-color: white;
+	background-position: right top;
+	background-size: 30px;
+	background-repeat: no-repeat;
+}
+/* estilos conto */
+#contacto form div {
+	padding: 0.7em;
+}
+/* estilos ubicacion */
 #mapa {
 	width: 400px;
 	height: 400px;
+	border: solid 3px #E95644;
 }
 #columna-direccion {
 	padding: 3%;
@@ -137,7 +159,7 @@ nav ul li a {
 #columna-mapa {
 	display: inline-block;
 	width: 35%;
-	padding: 3%;
-	border: solid 2px black;
 }
-
+#contacto, #chat, #contactar, #confirmacion-suscribir, #ubicacion{
+	padding: 2% 3% 2% 3%;
+}

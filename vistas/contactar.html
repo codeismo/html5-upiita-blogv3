@@ -1,11 +1,7 @@
 {% extends "layout.html" %}
 
 {% block contenido %}
-        <section id="contactar">
-                <h3>Gracias por tu mensaje {{nombreCliente}}</h3>
-                <p>Mensaje: {{comentarioCliente}}</p>
-            </form>
-        </section>
+     {% include "contactar_contenido.html"%}
 {% endblock %}
 
 

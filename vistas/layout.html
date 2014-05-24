@@ -5,13 +5,11 @@
         <title>Mi blog</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="//maps.google.com/maps/api/js?sensor=true"></script>
         <script  src="../javascript/jquery-1.10.2.min.js"></script>
         <script  src="../javascript/sombra_titulo.js"></script>
         <script  src="../javascript/cerrar_redes.js"></script>
-        {% block scripts%}
-
-        {% endblock %}
+        <script  src="../javascript/preparar_ajax.js"></script>
 
         <link href="../css/normalize.css" rel="stylesheet" type="text/css"/>
         <!--<link href="css/media.css" rel="stylesheet" type="text/css" />
@@ -32,26 +30,28 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="/">Inicio</a>
+                        <a href="/" class="ajax-link" data-url="/inicio-contenido">Inicio</a>
                     </li>
                     <li>
-                        <a href="/galeria">Galeria</a>
+                        <a href="/galeria" class="ajax-link" data-url="/galeria-contenido">Galeria</a>
                     </li>
                     <li>
-                        <a href="/chat">Chat</a>
+                        <a id="link-chat" class="ajax-link" data-url="/chat-contenido" href="/chat">Chat</a>
                     </li>
                     <li>
-                        <a href="/contacto">Contacto</a>
+                        <a href="/contacto" class="ajax-link" data-url="/contacto-contenido">Contacto</a>
                     </li>
                     <li>
-                        <a href="/ubicacion">Ubicacion</a>
+                        <a id="link-ubicacion" href="/ubicacion" class="ajax-link" data-url="/ubicacion-contenido">Ubicacion</a>
                     </li>
                 </ul>
             </nav>
         </header>
         
+        <div id="contenido-principal">
         {% block contenido %}
-        {% endblock %}
+        {% endblock %}            
+        </div>
         
         <footer>
             <div id="siguenos">

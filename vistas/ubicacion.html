@@ -1,17 +1,5 @@
 {% extends "layout.html" %}
 
-{%block scripts%}
-    {% include "scriptsmapa.html" %}
-{% endblock %}
-    
 {% block contenido %}
-        <section id="ubicacion">
-            <div id="columna-direccion">
-                <h3>Visita Nuestras Oficinas</h3>
-                <p>Avenida Montevideo 363, Gustavo A. Madero, Lindavista, 07300 Cuidad de Mexico, D.F., México</p>
-            </div>
-            <div id="columna-mapa">
-                <div id="mapa"></div>
-            </div>
-        </section>
+        {% include "ubicacion_contenido.html" %}
 {% endblock %}

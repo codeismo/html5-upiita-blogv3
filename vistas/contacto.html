@@ -1,13 +1,5 @@
 {% extends "layout.html" %}
 
 {% block contenido %}
-        <section id="contacto">
-            <form method="post" action="/contactar">
-                <label for="contacto-nombre">Nombre:</label>
-                <input name="nombre" id="contacto-nombre" type="text"/>
-                <label for ="contacto-comentario">Comnetario:</label>
-                <textarea name="comentario" id="contacto-comentario"></textarea>
-                <input type="submit">
-            </form>
-        </section>
+        {% include "contacto_contenido.html"%}
 {% endblock%}

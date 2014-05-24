@@ -1,0 +1,27 @@
+<div id="fb-root"></div>
+<script>
+    ( function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=762912700414942&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk')); 
+</script>
+<section id="galeria">
+    <div id="principal">
+        <img src="../imagenes/galeria/principal1.jpg"/>
+    </div>
+    <div id="preview">
+        <img data-ruta-principal="../imagenes/galeria/principal1.jpg" src="../imagenes/galeria/preview1.jpg"/>
+        <img data-ruta-principal="../imagenes/galeria/principal2.jpg"src="../imagenes/galeria/preview2.jpg"/>
+        <img data-ruta-principal="../imagenes/galeria/principal3.jpg"src="../imagenes/galeria/preview3.jpg"/>
+    </div>
+    <div id="comentarios">
+       <h3>Comentarios</h3> 
+       <div class="fb-comments" data-href="http://example.com/comments" data-width="700" data-numposts="3" data-colorscheme="light"></div>
+    </div>
+</section>
+{% include "scriptsgaleria.html" %}

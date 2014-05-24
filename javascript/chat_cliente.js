@@ -24,13 +24,5 @@
 			 	var nombre = datosServidor.nombreCliente;
 			 	var mensaje = datosServidor.mensajeCliente;
 			 	mostrar_mensaje(nombre, mensaje);
-		   });
-		   
-		   /* socket.on("mensaje_al_cliente",function(datosServidor){
-		        var nom = datosServidor.nombre;
-		        var mens = datosServidor.mensaje;
-		        
-		        var caja = "<div class='mensaje'> <span>" + nom + " dice: </span> "+ mens +"</div>";
-                $("#mensajes").append(caja);
-		    }); */           
+		   });         
 		});	
